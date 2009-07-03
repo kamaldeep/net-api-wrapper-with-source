@@ -117,5 +117,17 @@ namespace CampaignMonitorAPIWrapper
             else
                 return new Result<List<CampaignMonitorAPI.Subscriber>>(0, "Success", new List<CampaignMonitorAPI.Subscriber>((IEnumerable<CampaignMonitorAPI.Subscriber>)o));
         }
+
+        public static Result<List<CampaignMonitorAPI.Template>> GetTemplates(string apiKey, string clientID)
+        {
+            CampaignMonitorAPI.api api = new CampaignMonitorAPI.api();
+
+            object o = api.GetClientTemplates(apiKey, clientID);
+
+            if (o is CampaignMonitorAPI.Result)
+                return new Result<List<CampaignMonitorAPI.Template>>((CampaignMonitorAPI.Result)o, null);
+            else
+                return new Result<List<CampaignMonitorAPI.Template>>(0, "Success", new List<CampaignMonitorAPI.Template>((IEnumerable<CampaignMonitorAPI.Template>)o));
+        }
     }
 }

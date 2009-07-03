@@ -109,5 +109,14 @@ namespace CampaignMonitorAPIWrapper
             else
                 return new Result<List<CampaignMonitorAPI.List>>(0, "Success", new List<CampaignMonitorAPI.List>((IEnumerable<CampaignMonitorAPI.List>)o));
         }
+
+        public static Result<string> Delete(string apiKey, string campaignID)
+        {
+            CampaignMonitorAPIWrapper.CampaignMonitorAPI.api _api = new CampaignMonitorAPI.api();
+
+            object o = _api.DeleteCampaign(apiKey, campaignID);
+
+            return new Result<string>((CampaignMonitorAPI.Result)o, null);
+        }
     }
 }

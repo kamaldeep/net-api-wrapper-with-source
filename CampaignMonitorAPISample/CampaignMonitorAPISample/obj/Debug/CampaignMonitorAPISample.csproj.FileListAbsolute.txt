@@ -10,3 +10,9 @@ C:\Users\philg.FRESHVIEW\Desktop\campaignmonitor-net-api-wrapper-with-source\Cam
 C:\Users\philg.FRESHVIEW\Desktop\campaignmonitor-net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\bin\Debug\CampaignMonitorAPISample.pdb
 C:\Users\philg.FRESHVIEW\Desktop\campaignmonitor-net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\bin\Debug\CampaignMonitorAPIWrapper.dll
 C:\Users\philg.FRESHVIEW\Desktop\campaignmonitor-net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\obj\Debug\CampaignMonitorAPISample.exe
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\obj\Debug\CampaignMonitorAPISample.pdb
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\bin\Debug\CampaignMonitorAPISample.exe
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\bin\Debug\CampaignMonitorAPISample.pdb
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\bin\Debug\CampaignMonitorAPIWrapper.dll
+C:\Users\jamesd\work\dev\net-api-wrapper-with-source\CampaignMonitorAPISample\CampaignMonitorAPISample\obj\Debug\ResolveAssemblyReference.cache

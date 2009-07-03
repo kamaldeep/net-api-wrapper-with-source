@@ -202,6 +202,14 @@
           <s:element minOccurs="1" maxOccurs="1" name="AccessLevel" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="Template">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviewURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScreenshotURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:complexType name="List">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="ListID" type="s:string" />
@@ -273,6 +281,11 @@
       <s:complexType name="ArrayOfList">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="unbounded" name="List" nillable="true" type="tns:List" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Template" nillable="true" type="tns:Template" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfSubscriberClick">
@@ -538,6 +551,21 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Client.GetSuppressionListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Client.GetTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Client.GetTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client.GetTemplatesResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -820,6 +848,89 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Campaign.Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Campaign.DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Campaign.DeleteResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HTMLPageURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipFileURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ScreenshotURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Template.CreateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.GetDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.GetDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Template.GetDetailResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HTMLPageURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZipFileURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ScreenshotURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Template.UpdateResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApiKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Template.DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Template.DeleteResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Result" nillable="true" type="tns:Result" />
       <s:element name="anyType" nillable="true" />
     </s:schema>
@@ -950,6 +1061,12 @@
   <wsdl:message name="Client.GetSuppressionListSoapOut">
     <wsdl:part name="parameters" element="tns:Client.GetSuppressionListResponse" />
   </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:Client.GetTemplates" />
+  </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:Client.GetTemplatesResponse" />
+  </wsdl:message>
   <wsdl:message name="Client.CreateSoapIn">
     <wsdl:part name="parameters" element="tns:Client.Create" />
   </wsdl:message>
@@ -1051,6 +1168,36 @@
   </wsdl:message>
   <wsdl:message name="Campaign.SendSoapOut">
     <wsdl:part name="parameters" element="tns:Campaign.SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="Campaign.DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Campaign.Delete" />
+  </wsdl:message>
+  <wsdl:message name="Campaign.DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Campaign.DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:Template.Create" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:Template.CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:Template.GetDetail" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:Template.GetDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Template.Update" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Template.UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:Template.Delete" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:Template.DeleteResponse" />
   </wsdl:message>
   <wsdl:message name="Subscriber.AddHttpGetIn">
     <wsdl:part name="ApiKey" type="s:string" />
@@ -1207,6 +1354,13 @@
   <wsdl:message name="Client.GetSuppressionListHttpGetOut">
     <wsdl:part name="Body" element="tns:anyType" />
   </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="ClientID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
   <wsdl:message name="Client.CreateHttpGetIn">
     <wsdl:part name="ApiKey" type="s:string" />
     <wsdl:part name="CompanyName" type="s:string" />
@@ -1332,6 +1486,49 @@
     <wsdl:part name="SendDate" type="s:string" />
   </wsdl:message>
   <wsdl:message name="Campaign.SendHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="Campaign.DeleteHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="CampaignID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Campaign.DeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="ClientID" type="s:string" />
+    <wsdl:part name="TemplateName" type="s:string" />
+    <wsdl:part name="HTMLPageURL" type="s:string" />
+    <wsdl:part name="ZipFileURL" type="s:string" />
+    <wsdl:part name="ScreenshotURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+    <wsdl:part name="TemplateName" type="s:string" />
+    <wsdl:part name="HTMLPageURL" type="s:string" />
+    <wsdl:part name="ZipFileURL" type="s:string" />
+    <wsdl:part name="ScreenshotURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteHttpGetIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteHttpGetOut">
     <wsdl:part name="Body" element="tns:Result" />
   </wsdl:message>
   <wsdl:message name="Subscriber.AddHttpPostIn">
@@ -1489,6 +1686,13 @@
   <wsdl:message name="Client.GetSuppressionListHttpPostOut">
     <wsdl:part name="Body" element="tns:anyType" />
   </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="ClientID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Client.GetTemplatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
   <wsdl:message name="Client.CreateHttpPostIn">
     <wsdl:part name="ApiKey" type="s:string" />
     <wsdl:part name="CompanyName" type="s:string" />
@@ -1616,6 +1820,49 @@
   <wsdl:message name="Campaign.SendHttpPostOut">
     <wsdl:part name="Body" element="tns:Result" />
   </wsdl:message>
+  <wsdl:message name="Campaign.DeleteHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="CampaignID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Campaign.DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="ClientID" type="s:string" />
+    <wsdl:part name="TemplateName" type="s:string" />
+    <wsdl:part name="HTMLPageURL" type="s:string" />
+    <wsdl:part name="ZipFileURL" type="s:string" />
+    <wsdl:part name="ScreenshotURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.CreateHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.GetDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+    <wsdl:part name="TemplateName" type="s:string" />
+    <wsdl:part name="HTMLPageURL" type="s:string" />
+    <wsdl:part name="ZipFileURL" type="s:string" />
+    <wsdl:part name="ScreenshotURL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.UpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteHttpPostIn">
+    <wsdl:part name="ApiKey" type="s:string" />
+    <wsdl:part name="TemplateID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Template.DeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
   <wsdl:portType name="apiSoap">
     <wsdl:operation name="AddSubscriberWithCustomFields">
       <wsdl:input name="Subscriber.AddWithCustomFields" message="tns:Subscriber.AddWithCustomFieldsSoapIn" />
@@ -1701,6 +1948,10 @@
       <wsdl:input name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListSoapIn" />
       <wsdl:output name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <wsdl:input name="Client.GetTemplates" message="tns:Client.GetTemplatesSoapIn" />
+      <wsdl:output name="Client.GetTemplates" message="tns:Client.GetTemplatesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <wsdl:input name="Client.Create" message="tns:Client.CreateSoapIn" />
       <wsdl:output name="Client.Create" message="tns:Client.CreateSoapOut" />
@@ -1768,6 +2019,26 @@
     <wsdl:operation name="SendCampaign">
       <wsdl:input name="Campaign.Send" message="tns:Campaign.SendSoapIn" />
       <wsdl:output name="Campaign.Send" message="tns:Campaign.SendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <wsdl:input name="Campaign.Delete" message="tns:Campaign.DeleteSoapIn" />
+      <wsdl:output name="Campaign.Delete" message="tns:Campaign.DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <wsdl:input name="Template.Create" message="tns:Template.CreateSoapIn" />
+      <wsdl:output name="Template.Create" message="tns:Template.CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <wsdl:input name="Template.GetDetail" message="tns:Template.GetDetailSoapIn" />
+      <wsdl:output name="Template.GetDetail" message="tns:Template.GetDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <wsdl:input name="Template.Update" message="tns:Template.UpdateSoapIn" />
+      <wsdl:output name="Template.Update" message="tns:Template.UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:input name="Template.Delete" message="tns:Template.DeleteSoapIn" />
+      <wsdl:output name="Template.Delete" message="tns:Template.DeleteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="apiHttpGet">
@@ -1847,6 +2118,10 @@
       <wsdl:input name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListHttpGetIn" />
       <wsdl:output name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <wsdl:input name="Client.GetTemplates" message="tns:Client.GetTemplatesHttpGetIn" />
+      <wsdl:output name="Client.GetTemplates" message="tns:Client.GetTemplatesHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <wsdl:input name="Client.Create" message="tns:Client.CreateHttpGetIn" />
       <wsdl:output name="Client.Create" message="tns:Client.CreateHttpGetOut" />
@@ -1910,6 +2185,26 @@
     <wsdl:operation name="SendCampaign">
       <wsdl:input name="Campaign.Send" message="tns:Campaign.SendHttpGetIn" />
       <wsdl:output name="Campaign.Send" message="tns:Campaign.SendHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <wsdl:input name="Campaign.Delete" message="tns:Campaign.DeleteHttpGetIn" />
+      <wsdl:output name="Campaign.Delete" message="tns:Campaign.DeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <wsdl:input name="Template.Create" message="tns:Template.CreateHttpGetIn" />
+      <wsdl:output name="Template.Create" message="tns:Template.CreateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <wsdl:input name="Template.GetDetail" message="tns:Template.GetDetailHttpGetIn" />
+      <wsdl:output name="Template.GetDetail" message="tns:Template.GetDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <wsdl:input name="Template.Update" message="tns:Template.UpdateHttpGetIn" />
+      <wsdl:output name="Template.Update" message="tns:Template.UpdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:input name="Template.Delete" message="tns:Template.DeleteHttpGetIn" />
+      <wsdl:output name="Template.Delete" message="tns:Template.DeleteHttpGetOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="apiHttpPost">
@@ -1989,6 +2284,10 @@
       <wsdl:input name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListHttpPostIn" />
       <wsdl:output name="Client.GetSuppressionList" message="tns:Client.GetSuppressionListHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <wsdl:input name="Client.GetTemplates" message="tns:Client.GetTemplatesHttpPostIn" />
+      <wsdl:output name="Client.GetTemplates" message="tns:Client.GetTemplatesHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <wsdl:input name="Client.Create" message="tns:Client.CreateHttpPostIn" />
       <wsdl:output name="Client.Create" message="tns:Client.CreateHttpPostOut" />
@@ -2052,6 +2351,26 @@
     <wsdl:operation name="SendCampaign">
       <wsdl:input name="Campaign.Send" message="tns:Campaign.SendHttpPostIn" />
       <wsdl:output name="Campaign.Send" message="tns:Campaign.SendHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <wsdl:input name="Campaign.Delete" message="tns:Campaign.DeleteHttpPostIn" />
+      <wsdl:output name="Campaign.Delete" message="tns:Campaign.DeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <wsdl:input name="Template.Create" message="tns:Template.CreateHttpPostIn" />
+      <wsdl:output name="Template.Create" message="tns:Template.CreateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <wsdl:input name="Template.GetDetail" message="tns:Template.GetDetailHttpPostIn" />
+      <wsdl:output name="Template.GetDetail" message="tns:Template.GetDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <wsdl:input name="Template.Update" message="tns:Template.UpdateHttpPostIn" />
+      <wsdl:output name="Template.Update" message="tns:Template.UpdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:input name="Template.Delete" message="tns:Template.DeleteHttpPostIn" />
+      <wsdl:output name="Template.Delete" message="tns:Template.DeleteHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="apiSoap" type="tns:apiSoap">
@@ -2245,6 +2564,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <soap:operation soapAction="http://api.createsend.com/api/Client.GetTemplates" style="document" />
+      <wsdl:input name="Client.GetTemplates">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Client.GetTemplates">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <soap:operation soapAction="http://api.createsend.com/api/Client.Create" style="document" />
       <wsdl:input name="Client.Create">
@@ -2395,6 +2723,51 @@
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output name="Campaign.Send">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <soap:operation soapAction="http://api.createsend.com/api/Campaign.Delete" style="document" />
+      <wsdl:input name="Campaign.Delete">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Campaign.Delete">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <soap:operation soapAction="http://api.createsend.com/api/Template.Create" style="document" />
+      <wsdl:input name="Template.Create">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Create">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <soap:operation soapAction="http://api.createsend.com/api/Template.GetDetail" style="document" />
+      <wsdl:input name="Template.GetDetail">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.GetDetail">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <soap:operation soapAction="http://api.createsend.com/api/Template.Update" style="document" />
+      <wsdl:input name="Template.Update">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Update">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap:operation soapAction="http://api.createsend.com/api/Template.Delete" style="document" />
+      <wsdl:input name="Template.Delete">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Delete">
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -2590,6 +2963,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <soap12:operation soapAction="http://api.createsend.com/api/Client.GetTemplates" style="document" />
+      <wsdl:input name="Client.GetTemplates">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Client.GetTemplates">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <soap12:operation soapAction="http://api.createsend.com/api/Client.Create" style="document" />
       <wsdl:input name="Client.Create">
@@ -2740,6 +3122,51 @@
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output name="Campaign.Send">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <soap12:operation soapAction="http://api.createsend.com/api/Campaign.Delete" style="document" />
+      <wsdl:input name="Campaign.Delete">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Campaign.Delete">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <soap12:operation soapAction="http://api.createsend.com/api/Template.Create" style="document" />
+      <wsdl:input name="Template.Create">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Create">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <soap12:operation soapAction="http://api.createsend.com/api/Template.GetDetail" style="document" />
+      <wsdl:input name="Template.GetDetail">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.GetDetail">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <soap12:operation soapAction="http://api.createsend.com/api/Template.Update" style="document" />
+      <wsdl:input name="Template.Update">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Update">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap12:operation soapAction="http://api.createsend.com/api/Template.Delete" style="document" />
+      <wsdl:input name="Template.Delete">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="Template.Delete">
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -2917,6 +3344,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <http:operation location="/Client.GetTemplates" />
+      <wsdl:input name="Client.GetTemplates">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Client.GetTemplates">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <http:operation location="/Client.Create" />
       <wsdl:input name="Client.Create">
@@ -3058,6 +3494,51 @@
         <http:urlEncoded />
       </wsdl:input>
       <wsdl:output name="Campaign.Send">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <http:operation location="/Campaign.Delete" />
+      <wsdl:input name="Campaign.Delete">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Campaign.Delete">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <http:operation location="/Template.Create" />
+      <wsdl:input name="Template.Create">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Template.Create">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <http:operation location="/Template.GetDetail" />
+      <wsdl:input name="Template.GetDetail">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Template.GetDetail">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <http:operation location="/Template.Update" />
+      <wsdl:input name="Template.Update">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Template.Update">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <http:operation location="/Template.Delete" />
+      <wsdl:input name="Template.Delete">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="Template.Delete">
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
@@ -3235,6 +3716,15 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetClientTemplates">
+      <http:operation location="/Client.GetTemplates" />
+      <wsdl:input name="Client.GetTemplates">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Client.GetTemplates">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CreateClient">
       <http:operation location="/Client.Create" />
       <wsdl:input name="Client.Create">
@@ -3376,6 +3866,51 @@
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
       <wsdl:output name="Campaign.Send">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCampaign">
+      <http:operation location="/Campaign.Delete" />
+      <wsdl:input name="Campaign.Delete">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Campaign.Delete">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTemplate">
+      <http:operation location="/Template.Create" />
+      <wsdl:input name="Template.Create">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Template.Create">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateDetail">
+      <http:operation location="/Template.GetDetail" />
+      <wsdl:input name="Template.GetDetail">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Template.GetDetail">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <http:operation location="/Template.Update" />
+      <wsdl:input name="Template.Update">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Template.Update">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <http:operation location="/Template.Delete" />
+      <wsdl:input name="Template.Delete">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="Template.Delete">
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>

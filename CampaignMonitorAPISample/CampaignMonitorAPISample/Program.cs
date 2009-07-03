@@ -33,6 +33,7 @@ namespace CampaignMonitorAPISample
             //Campaign.GetBounces();
             //Campaign.GetSubscriberClicks();
             //Campaign.GetUnsubscribes();
+            //Campaign.Delete();
             #endregion
 
             #region List. operations
@@ -55,6 +56,7 @@ namespace CampaignMonitorAPISample
             //Client.GetLists();
             //Client.GetSegments();
             //Client.GetSuppressionList();
+            //Client.GetTemplates();
             #endregion
 
             #region User. operations
@@ -62,6 +64,13 @@ namespace CampaignMonitorAPISample
             //User.GetSystemDate();
             //User.GetTimezones();
             //User.GetCountries();
+            #endregion
+
+            #region Template. operations
+            //Template.Create();
+            //Template.GetDetail();
+            //Template.Update();
+            //Template.Delete();
             #endregion
 
             Console.ReadLine(); // pause

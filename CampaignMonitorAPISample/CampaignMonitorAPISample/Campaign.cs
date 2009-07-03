@@ -176,5 +176,18 @@ namespace CampaignMonitorAPISample
                     Console.WriteLine("---------------------------------------");
                 }
         }
+
+        internal static void Delete()
+        {
+            string apiKey = "xxxxxxxxxxxxApiKeyxxxxxxxxxxxxxx";
+            string campaignID = "xxxxxxxxxxCampaignIDxxxxxxxxxxxx";
+
+            var result = CampaignMonitorAPIWrapper.Campaign.Delete(apiKey, campaignID);
+
+            if (result.Code != 0)
+                Console.WriteLine("Error deleting campaign : " + result.Code.ToString() + " - " + result.Message);
+            else
+                Console.WriteLine("The campaign was successfully deleted.");
+        }
     }
 }

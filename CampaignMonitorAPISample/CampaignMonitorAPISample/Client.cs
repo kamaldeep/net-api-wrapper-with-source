@@ -195,5 +195,32 @@ namespace CampaignMonitorAPISample
                     Console.WriteLine("---------------------------------------");
                 }
         }
+
+        internal static void GetTemplates()
+        {
+            string apiKey = "xxxxxxxxxxxxApiKeyxxxxxxxxxxxxxx";
+            string clientID = "xxxxxxxxxxxClientIDxxxxxxxxxxxxx";
+
+            apiKey = "4ae8a0f27dbeb659a2c0a8fc168d68d9";
+            clientID = "e5a7aadf3ad73abdf4de86b4a16b1c4e";
+
+
+            var result = CampaignMonitorAPIWrapper.Client.GetTemplates(apiKey, clientID);
+
+            if (result.Code != 0)
+                Console.WriteLine("Error getting client templates : " + result.Code.ToString() + " - " + result.Message);
+            else if (result.ReturnObject.Count == 0)
+                Console.WriteLine("There are no templates for this client");
+            else
+                foreach (var template in result.ReturnObject)
+                {
+                    Console.WriteLine("Template ID : " + template.TemplateID);
+                    Console.WriteLine("Template Name : " + template.Name);
+                    Console.WriteLine("Template Preview URL : " + template.PreviewURL);
+                    Console.WriteLine("Template Screenshot URL : " + template.ScreenshotURL);
+
+                    Console.WriteLine("---------------------------------------");
+                }
+        }
     }
 }
