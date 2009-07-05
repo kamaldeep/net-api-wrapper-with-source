@@ -201,10 +201,6 @@ namespace CampaignMonitorAPISample
             string apiKey = "xxxxxxxxxxxxApiKeyxxxxxxxxxxxxxx";
             string clientID = "xxxxxxxxxxxClientIDxxxxxxxxxxxxx";
 
-            apiKey = "4ae8a0f27dbeb659a2c0a8fc168d68d9";
-            clientID = "e5a7aadf3ad73abdf4de86b4a16b1c4e";
-
-
             var result = CampaignMonitorAPIWrapper.Client.GetTemplates(apiKey, clientID);
 
             if (result.Code != 0)
